@@ -45,3 +45,6 @@ So, Please run in python 3.13 or whatever you using that will not give any error
 I wanna eat MCA1 and speedrun record 💀💀
 
 It is Fully PYTHON!!!!!!
+
+* Program: Automated Level 1 with my program
+* Me: <b>BEATEN MCA1 WITH ONLY 2 HIT, 4 LIVES END</b>
