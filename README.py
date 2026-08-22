@@ -8,7 +8,7 @@ input("""
  #     # ####### #          #     # ####### ####### ####### #     #  #####  #######    ##### 
 
  Mep release 1.0.1                              
-Thank you for installing MOMO EXPLOSION PROJECT a.k.a. MEP!
+Thank you for installing MOMO EXPLOSION PROJECT (whatever I should change it later, but idk what to change) a.k.a. MEP!
 
 Before using this installation release, Please read this README precisely.
 
