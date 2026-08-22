@@ -31,3 +31,5 @@ Pls see all the README and use it.
 
 ## Editor Notes
 I wanna eat MCA1 and speedrun record 💀💀
+
+It is Fully PYTHON!!!!!!
