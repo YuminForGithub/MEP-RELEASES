@@ -29,6 +29,8 @@ Pls see all the README and use it.
 
 [MCA1(Google Doodle Halloween 2016, Game)](https://doodles.google/doodle/halloween-2016/?doodle=28464230&platform=2&domain_name=google.com&hl=en)
 
+[Download Python 3.13.15](https://www.python.org/downloads/release/python-31315/)
+
 ## WARNING
 This is tested on ONLY python 3.13 (Because newest version did not work on some version).
 So, Please run in python 3.13 or whatever you using that will not give any error..
