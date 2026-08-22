@@ -6,6 +6,8 @@ My MEP Release. Latest update had been commited in this Release. Have fun!
 
 (And if you want to commit on my work, Please fork my site and modify it, or... comment, Pull request. Works)
 
+Pls see all the README and use it.
+
 ## Usage
   1. Go to folder `root`.
   2. Open `mep_background_runner.py` file.
@@ -13,6 +15,8 @@ My MEP Release. Latest update had been commited in this Release. Have fun!
   * For information, Open `README.py` file.
   * For be sure it is working, use `tkinter-mouse-test3.py` file. It will work if this is downloaded successfully.
   * To directly go to the site while opening MEP, use `f.py` file (It will directly go to MCA1 if you want).
+
+  * Tip: Download in .zip file from `<> code` menu. That's it.
 
 ## Update Notes of Latest version
   * First full commitment on GitHub.
