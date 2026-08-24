@@ -2,7 +2,7 @@
 # I used ChatGPT Codex to work with, but after just 2 works of this, We had to upgrade my plan from free to more complicated...
 
 """
-## MEP RELEASE 1 - Prototype "Alpha Slowy"
+## MEP RELEASE: v1.0.2 "Alpha" [2020 - 2024 update!]
 Module (or Alternate runner) `mep_background_runner(.py)` is alternate module to run `MEP RELEASE 1 Prototype` directly. Please use this module in right usage following:
 
 Usage:
@@ -84,33 +84,37 @@ if current_battery is not None:
 
 SPELL_HOTKEYS = { # SAFE TO CHANGE.
   # USAGE: "(hotkey)": "(spell to use)", ... end: no comma.
-  # SYMBOLS [i: I, e: -, v: V, u: Up-V, l: lightning, h: heart]
+  # SYMBOLS [i: I, e: -, v: V, u: Up-V, l: lightning, h: heart, spiral: (same)]
   "1":  "i",
   "2":  "e",
   "3": "v",
   "4": "u",
   "5":  "l",
   "6":  "h",
+  "7": "spiral",
+  "8": "circle"
 }
 
-ABORT_HOTKEY = "7" # ⁡⁣⁢⁣⁡⁣⁢SAFE TO CHANGE.⁡ (Please be sure remember this hotkey when changing for emergency reasons.)
-QUIT_HOTKEY = "8" # SAFE TO CHANGE.
+ABORT_HOTKEY = "9" # ⁡⁣⁢⁣⁡⁣⁢SAFE TO CHANGE.⁡ (Please be sure remember this hotkey when changing for emergency reasons.)
+QUIT_HOTKEY = "0" # SAFE TO CHANGE.
 
 # Coordinates for each spell.
 # Change these whenever you want. ⁡⁣⁢SAFE TO CHANGE.
 SPELLS = {
   # USAGE: "(symbol)": (x, y, l)
-  # WARNING: Variable 'l' should be used at v, u, i, e and nothing else or code will break!
+  # WARNING: Variable 'l'(right-side) should be used at v, u, i, e and nothing else or code will break!
   "v": (600, 500, 80),
   "u": (600, 500, 80),
   "i": (600, 500, 80),
   "e": (600, 500, 80),
   "l": (600, 500),
   "h": (600, 500),
+  "spiral": (600, 500),
+  "circle": (600, 500)
 }
 
 pgu.PAUSE = 0.015 # Safe to change. Delay every spell drawing steps, Do not go lower than 0.014.
-SPELL_DURATION = 0.07 # Safe to change, but putting lower than default may cause to web cannot interact with mouse.
+SPELL_DURATION = 0.075 # Safe to change, but putting lower than default may cause to web cannot interact with mouse.
 SEQUENCE_DELAY = 0.018 # Safe to change. Delay every sequence of spell. Do not go lower than 0.0156.
 
 RELEASE_KEYS = [ # Do not change this.
@@ -142,9 +146,10 @@ class Configs:
       "4": "u",
       "5":  "l",
       "6":  "h",
+      "7": "spiral"
     }
-    ABORT_HOTKEY = "7"
-    QUIT_HOTKEY = "8"
+    ABORT_HOTKEY = "8"
+    QUIT_HOTKEY = "9"
     SPELL_DURATION = 0.11
     SEQUENCE_DELAY = 0.018
     pgu.PAUSE = 0.016
@@ -424,6 +429,26 @@ class MEPBackgroundRunner:
             dur=SPELL_DURATION
           )
 
+        elif spell == "spiral":
+          x, y = SPELLS["spiral"]
+
+          self.mep.drawer.spiral(
+            x,
+            y,
+            dur=SPELL_DURATION,
+            divider=0.3
+          )
+
+        elif spell == "circle":
+          x, y = SPELLS["circle"]
+
+          self.mep.drawer.circle(
+            x,
+            y,
+            dur=SPELL_DURATION,
+            divider=0.3
+          )
+
         else:
           raise ValueError(
             f"Unknown spell: {spell}"
@@ -654,7 +679,24 @@ def main(redirect_now: bool = False):
     )
 
   if redirect_now:
-    webbrowser.open("https://doodles.google/doodle/halloween-2016/?doodle=28464230&platform=2&domain_name=google.com&hl=en")
+    openversion = int(input("""\
+Which doodle to open?
+1: Halloween 2016, 2: Halloween 2020, 3: Halloween 2024.
+(Note: 2020-2024 needs spell `spiral`. It is neccessary, but 2016 will not work with spiral.)
+>> """))
+    match openversion:
+      case 1:
+        link = "https://www.google.com/logos/2016/halloween16/halloween16.html"
+      case 2:
+        link = "https://www.google.com/logos/2020/halloween20/rc1/halloween20.html"
+      case 3:
+        link = "https://www.google.com/logos/2024/halloween24/rc3/halloween24.html?hl=en&origin=www.google.com"
+      case _:
+        print("""\
+ERROR: Bad version information
+Provide 1, 2, or 3 while try of redirect doodle.""")
+        exit(9)
+    webbrowser.open(link)
   
   runner.run()
 

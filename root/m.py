@@ -1,9 +1,7 @@
-# A longest file in MEP!
-
 print("Please wait while we load our modules...")
 
 import pyautogui as pgu
-import threading
+import threading, math
 
 
 # ============================================================
@@ -15,7 +13,7 @@ import threading
 print(
   "\nHello from Yumin1004. (c) Made in Korea 2026\n"
   "MEP(Momo Explosion Project) Subprocessor ||| "
-  "Version = Release 1 (Build: ALPHA SLOWY)\n"
+  "v1.0.2 BUILD 1 (2020-2024 update; UNFINISHED.) \n"
   """
 MEP is the project to Speedrun the game `Magic Cat Academy`
 as TAS (Tool-assisted Speedrun) using Python.
@@ -24,7 +22,7 @@ Current speedrun record (Any%, Glitchless, Without TAS)
 is 4m 34s 917ms by Voulu.
 (Based on www.speedrun.com, 18 August 2026)
 
-Mission: 4m 34s or lower
+Mission: 4m 34s or lower for 2016
 
 (Creator note: Help me)
 """
@@ -422,6 +420,123 @@ class Drawer:
 
     self.end()
     return True
+  # ----------------------------------------------------------
+  # SPIRAL (Added from 2020-2024 Update)
+  # ----------------------------------------------------------
+
+  def spiral(
+    self,
+    sx: int,
+    sy: int,
+    dur: float | int = 0.1,
+    divider: float = 1,
+    test: bool = False
+  ):
+    if divider <= 0:
+      raise ValueError(
+        "Divider cannot be negative or 0"
+      )
+
+    coordinates = []
+
+    for i in range(20):
+      angle = i * 0.7 # Faster spiral: Make multiplier bigger. 100: SPHAGETTI!!!!!!!!!!!!!
+      radius = 5 + i * 3 # Tighter: Make multiplier smaller or make base number smaller. 100 means momo's heat death 💀
+
+      x = round(math.cos(angle) * radius)
+      y = round(math.sin(angle) * radius)
+
+      coordinates.append((x, y))
+
+    if not self.test_wait(test):
+      return False
+
+    first_x = sx + coordinates[0][0] // divider
+    first_y = sy + coordinates[0][1] // divider
+
+    if not self.start(first_x, first_y):
+      return False
+
+    segment_dur = dur / (len(coordinates) - 1)
+
+    for x, y in coordinates[1:]:
+
+      if self.check_abort():
+        self.end()
+        return False
+
+      target_x = sx + x // divider
+      target_y = sy + y // divider
+
+      if not self.move_to(
+        target_x,
+        target_y,
+        duration=segment_dur
+      ):
+        self.end()
+        return False
+
+    self.end()
+    return True
+  # ----------------------------------------------------------
+  # CIRCLE (Added from 2020-2024 Update)
+  # ----------------------------------------------------------
+
+  def circle(
+    self,
+    sx: int,
+    sy: int,
+    dur: float | int = 0.1,
+    divider: float = 1,
+    test: bool = False
+  ):
+    if divider <= 0:
+      raise ValueError(
+        "Divider cannot be negative or 0"
+      )
+
+    coordinates = []
+
+    for i in range(20):
+      angle = i * 0.7
+      radius = 5 # Easiest because of this one. Just modifying radius value gives me good one
+
+      x = round(math.cos(angle) * radius)
+      y = round(math.sin(angle) * radius)
+
+      coordinates.append((x, y))
+
+    if not self.test_wait(test):
+      return False
+
+    first_x = sx + coordinates[0][0] // divider
+    first_y = sy + coordinates[0][1] // divider
+
+    if not self.start(first_x, first_y):
+      return False
+
+    segment_dur = dur / (len(coordinates) - 1)
+
+    for x, y in coordinates[1:]:
+
+      if self.check_abort():
+        self.end()
+        return False
+
+      target_x = sx + x // divider
+      target_y = sy + y // divider
+
+      if not self.move_to(
+        target_x,
+        target_y,
+        duration=segment_dur
+      ):
+        self.end()
+        return False
+
+    self.end()
+    return True
+  
 
 # ============================================================
 # KEYBOARD MACRO
