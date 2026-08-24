@@ -1,3 +1,5 @@
+# Origin tkinter file from tkinter-mouse-test3.py
+
 import tkinter as tk
 import time
 
