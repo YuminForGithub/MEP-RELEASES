@@ -7,8 +7,8 @@ input("""
  #     # #       #          #    #  #       #       #       #     # #     # #            #   
  #     # ####### #          #     # ####### ####### ####### #     #  #####  #######    ##### 
 
- Mep release 1.0.1                              
-Thank you for installing MOMO EXPLOSION PROJECT (whatever I should change it later, but idk what to change) a.k.a. MEP!
+ Mep release 1.0.2 [2020-2024 UPDATE: PACIFIC FROGS] "ALPHA"
+Thank you for installing MOMO EXPLOSION PROJECT a.k.a. MEP!
 
 Before using this installation release, Please read this README precisely.
 
@@ -40,9 +40,12 @@ input("""
         4: Up-V
         5: Lightning
         6: Heart
-
-        7: Abort inputting spells
-        8: Quit program
+        =-- vvv Updated in 2020 vvv --=
+        7: Spiral
+        8: Circle
+        =-- ^^^ updated in 2020 ^^^ --=
+        9: Abort spell inputting
+        0: Quit program
     And inputting those functions will make mouse draw those spells.
     You can change the hotkey in the program.
     Default running position is x=600, y=500.
@@ -70,7 +73,12 @@ Please have fun using this!
 print("""
 =--- Update notes ---=
 
-Latest update, Stable: v1.0.1
+Latest update, Stable: v1.0.2
+  Added some features to run with.
+    New Spell added: Spiral, Circle
+    Used as main...spiral() | main...circle()
+
+v1.0.1
   Fixed minor bug and modified movement while firing spell.
     I, E:
     Put 1 more pass to drag.
