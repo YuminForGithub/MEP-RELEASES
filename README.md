@@ -1,6 +1,6 @@
-﻿# MEP-RELEASE VERSION 1.0.1
+﻿# MEP-RELEASE VERSION 1.0.2
 
-Latest Update: v1.0.1
+Latest Update: v1.0.2
 
 My MEP Release. Latest update had been commited in this Release. Have fun!
 
@@ -28,6 +28,8 @@ Pls see all the README and use it.
 [MEP GitHub Repository](https://github.com/yourname/MEP-RELEASE)
 
 [MCA1(Google Doodle Halloween 2016, Game)](https://doodles.google/doodle/halloween-2016/?doodle=28464230&platform=2&domain_name=google.com&hl=en)
+[MCA2(Halloween 2020)](https://www.google.com/logos/2020/halloween20/rc1/halloween20.html)
+[MCA3(Halloween 2024(Last release))](https://www.google.com/logos/2024/halloween24/rc3/halloween24.html?hl=en&origin=www.google.com)
 
 [Download Python 3.13.15](https://www.python.org/downloads/release/python-31315/)
 
@@ -44,9 +46,8 @@ So, Please run in python 3.13 or whatever you using that will not give any error
 | ... | ... | ... | ... |
 
 ## Editor Notes
-I wanna eat MCA1 and speedrun record 💀💀
-
-It is Fully PYTHON!!!!!!
 
 * Program: Automated Level 1 with my program
 * Me: <b>BEATEN MCA1 WITH ONLY 2 HIT, 4 LIVES END</b>
+
+<b>2024 works better than 2020</b> using program...
