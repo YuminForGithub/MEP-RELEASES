@@ -19,10 +19,7 @@ Pls see all the README and use it.
   * Tip: Download in .zip file from `<> code` menu. That's it.
 
 ## Update Notes of Latest version
-  * First full commitment on GitHub.
-  * Lightning Spell's pass changed to 2x length movement.
-  * Stabilized and Fastened | and - movement.
-  * Changed V, Up-V and Lightning Spell's passes.
+  * Many update notes of latest version shown in Releases tab's newest version release's note. (Why is this SO complicated to expplain?)
 
 ## Sites
 [MEP GitHub Repository](https://github.com/yourname/MEP-RELEASE)
