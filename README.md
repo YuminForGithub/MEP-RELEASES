@@ -1,6 +1,6 @@
-﻿# MEP-RELEASE VERSION 1.0.2
+﻿# MEP-RELEASE VERSION 1.0.3
 
-Latest Update: v1.0.2
+Latest Update: v1.0.3
 
 My MEP Release. Latest update had been commited in this Release. Have fun!
 
@@ -19,7 +19,7 @@ Pls see all the README and use it.
   * Tip: Download in .zip file from `<> code` menu. That's it.
 
 ## Update Notes of Latest version
-  * Many update notes of latest version shown in Releases tab's newest version release's note. (Why is this SO complicated to expplain?)
+  * Many update notes of latest version shown in Releases tab's newest version release's note. (Why is this SO complicated to explain?)
 
 ## Sites
 [MEP GitHub Repository](https://github.com/yourname/MEP-RELEASE)
@@ -50,3 +50,5 @@ So, Please run in python 3.13 or whatever you using that will not give any error
 * Me: <b>BEATEN MCA1 WITH ONLY 2 HIT, 4 LIVES END</b>
 
 <b>2024 works better than 2020</b> using program...
+
+Well I kinda already said in a commitment detail, but sorry to momo. I made him speedrun with program, Destroying same ghosts using their spell. He's going to be exhausted when he is alive in real life(I know he IS alive in real life but he is just a cat, I am saying about magic cat academy's momo) and going straight to bed to sleep whole month 💀
