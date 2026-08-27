@@ -73,7 +73,18 @@ Please have fun using this!
 print("""
 =--- Update notes ---=
 
-Latest update, Stable: v1.0.2
+THIS
+  Modified movement while firing spell.
+    I, E:
+    Put 1 more pass to drag. Total 4 Passes.
+    
+    V:
+    Modified Drawing timing. (Pause: Forced to change inside function)
+    
+    Up-V, V:
+    Put 1 more pass to drag. Total 3 Passes.
+
+v1.0.2
   Added some features to run with.
     New Spell added: Spiral, Circle
     Used as main...spiral() | main...circle()
@@ -81,7 +92,7 @@ Latest update, Stable: v1.0.2
 v1.0.1
   Fixed minor bug and modified movement while firing spell.
     I, E:
-    Put 1 more pass to drag.
+    Put 1 more pass to drag. Total 3 Passes.
 
     V, Up-V:
     Modified Drawing timing. (Timing divider: 2 → 1.4)

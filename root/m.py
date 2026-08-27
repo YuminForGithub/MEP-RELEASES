@@ -157,18 +157,24 @@ class Drawer:
     if not self.move_to(
       sx,
       sy + d,
-      duration=dur
+      duration=dur/2
     ):
       self.end()
       return False
     if not self.move_to(
           sx + 7,
           sy + (d*2),
-          duration=dur
+          duration=dur/2
         ):
           self.end()
           return False
-
+    if not self.move_to(
+          sx+4,
+          sy + d*2.5,
+          duration=dur/2
+        ):
+          self.end()
+          return False
     self.end()
     return True
 
@@ -198,14 +204,21 @@ class Drawer:
     if not self.move_to(
       sx + d,
       sy,
-      duration=dur
+      duration=dur/2
     ):
       self.end()
       return False
     if not self.move_to(
           sx + (d * 2),
           sy + 7,
-          duration=dur
+          duration=dur/2
+        ):
+          self.end()
+          return False
+    if not self.move_to(
+          sx + d*2.4,
+          sy - 3,
+          duration=dur/2
         ):
           self.end()
           return False
@@ -222,6 +235,7 @@ class Drawer:
     sx: int,
     sy: int,
     d: int,
+    pause: float,
     dur: float | int = 0.1,
     test: bool = False
   ):
@@ -238,7 +252,7 @@ class Drawer:
       return False
 
     half = dur / 1.4
-
+    pgu.PAUSE = 0.02
     if not self.move_to(
       sx + d,
       sy - d,
@@ -254,7 +268,14 @@ class Drawer:
     ):
       self.end()
       return False
-
+    if not self.move_to(
+          sx + d * 2.2,
+          sy + d * 1.1,
+          duration=half
+        ):
+          self.end()
+          return False
+    pgu.PAUSE = pause
     self.end()
     return True
 
@@ -268,7 +289,7 @@ class Drawer:
     sy: int,
     d: int,
     dur: float | int = 0.1,
-    test: bool = False
+    test: bool = False,
   ):
     if d <= 0:
       raise ValueError(
@@ -282,8 +303,7 @@ class Drawer:
     if not self.start(sx, sy):
       return False
 
-    half = dur / 1.4
-
+    half = dur
     if not self.move_to(
       sx + d,
       sy + d,
@@ -293,13 +313,27 @@ class Drawer:
       return False
 
     if not self.move_to(
+          sx + d * 1.5,
+          sy + d*0.97,
+          duration=half
+        ):
+          self.end()
+          return False
+
+    if not self.move_to(
       sx + d * 2,
       sy - d,
       duration=half
     ):
       self.end()
       return False
-
+    if not self.move_to(
+          sx + d * 2.2,
+          sy - d * 1.4,
+          duration=half
+        ):
+          self.end()
+          return False
     self.end()
     return True
 
@@ -693,7 +727,7 @@ class Sequencer:
       self.mep.drawer.end()
       pgu.PAUSE = old_pause
 
-  def _play_command(self, command):
+  def _play_command(self, command, pause = pgu.PAUSE):
     if self.mep.aborted():
       return False
 
@@ -711,7 +745,7 @@ class Sequencer:
 
     elif spell == "v":
       _, x, y, d = command
-      if not self.mep.drawer.v(x, y, d, dur=0):
+      if not self.mep.drawer.v(x, y, d, pause=pause, dur=0):
         return False
 
     elif spell == "u":

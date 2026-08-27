@@ -113,9 +113,9 @@ SPELLS = {
   "circle": (600, 500)
 }
 
-pgu.PAUSE = 0.015 # Safe to change. Delay every spell drawing steps, Do not go lower than 0.014.
+pgu.PAUSE = 0.012 # Safe to change. Delay every spell drawing steps, Do not go lower than 0.014.
 SPELL_DURATION = 0.075 # Safe to change, but putting lower than default may cause to web cannot interact with mouse.
-SEQUENCE_DELAY = 0.018 # Safe to change. Delay every sequence of spell. Do not go lower than 0.0156.
+SEQUENCE_DELAY = 0.012 # Safe to change. Delay every sequence of spell. Do not go lower than 0.0156.
 
 RELEASE_KEYS = [ # Do not change this.
   "left", "right", "up", "down",
@@ -378,6 +378,7 @@ class MEPBackgroundRunner:
             x,
             y,
             d,
+            pause=pgu.PAUSE,
             dur=SPELL_DURATION
           )
 
